@@ -18,11 +18,10 @@ public class ProyectoUnoLogicaIII
     public static void main(String[] args) 
     {
        Hilera a = new Hilera();
-       a.insertarCaracter('d');
+       a.insertarCaracter('h');
+       a.insertarCaracter('o');
+       a.insertarCaracter('l');       
        a.insertarCaracter('a');
-       a.insertarCaracter('z');       
-       a.insertarCaracter('c');
-       a.insertarCaracter('b');
        
        a.recorreIzqDer();/*
        NodoDoble y = a.primerNodo().getLd();
@@ -30,11 +29,19 @@ public class ProyectoUnoLogicaIII
        a.recorreIzqDer();
        System.out.println(a.getTamaño());
        a.invertir();
-       a.recorreIzqDer();*/
+       a.recorreIzqDer();.0
        System.out.println(a.getTamaño());
        a.ordenarAlfabeticamente();
        
-       a.recorreIzqDer();
+       a.recorreIzqDer();*/
+       System.out.println(a.getTamaño());
+       Hilera b = new Hilera();
+       b.insertarCaracter('r');
+       b.insertarCaracter('h');
+       b.insertarCaracter('o');
+       b.insertarCaracter('l');       
+       b.insertarCaracter('a');
+       a.esSubstring(b);
     }
     
 }
