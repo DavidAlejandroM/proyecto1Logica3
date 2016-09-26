@@ -173,6 +173,30 @@ public class ListaDoblementeLigada
         desconectar(x);
     }
     
+    public NodoDoble buscarDondeInsertar(Object d)
+    {
+        
+        NodoDoble p;
+        NodoDoble y;
+        p = primerNodo();
+        y = anterior(p);
+        Character dato = (Character)p.getDato();
+        Character dato2 = (Character)d;
+        
+        while( (dato < dato2) &&  ! finDeRecorrido(p))
+        {
+            y = p;
+            p = p.getLd();
+            if(p !=null)
+            {
+               dato = (Character)p.getDato(); 
+            }
+            
+        }
+        return y;
+    }
+
+
     
     
 }

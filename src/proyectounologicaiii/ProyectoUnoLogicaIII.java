@@ -18,16 +18,22 @@ public class ProyectoUnoLogicaIII
     public static void main(String[] args) 
     {
        Hilera a = new Hilera();
-       a.insertarCaracter('a');
-       a.insertarCaracter('b');
-       a.insertarCaracter('c');
        a.insertarCaracter('d');
-       a.recorreIzqDer();
+       a.insertarCaracter('a');
+       a.insertarCaracter('z');       
+       a.insertarCaracter('c');
+       a.insertarCaracter('b');
+       
+       a.recorreIzqDer();/*
        NodoDoble y = a.primerNodo().getLd();
        a.eliminarNodo(a.getNodoI(2));
        a.recorreIzqDer();
        System.out.println(a.getTamaño());
        a.invertir();
+       a.recorreIzqDer();*/
+       System.out.println(a.getTamaño());
+       a.ordenarAlfabeticamente();
+       
        a.recorreIzqDer();
     }
     

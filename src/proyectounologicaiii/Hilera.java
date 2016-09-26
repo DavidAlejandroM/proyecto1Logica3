@@ -75,4 +75,37 @@ public class Hilera extends ListaDoblementeLigada
             i++;
         }
     }
+    
+    public void ordenarAlfabeticamente()
+    {
+        int i = 0;
+        ListaDoblementeLigada h = new ListaDoblementeLigada();
+        NodoDoble p = this.primero;
+        while(i < this.longitud)
+        {
+            NodoDoble pc = new NodoDoble(p.getDato());
+            if (i == 0)
+            {
+                h.conectar(pc, null);
+            }
+            else
+            {
+                NodoDoble q = h.buscarDondeInsertar(pc.getDato());
+                h.conectar(pc, q);
+            }
+            p = p.getLd();
+            i++;
+        }
+        i = 0;
+        p = h.primero;
+        NodoDoble q = this.primero;
+        while(i < this.longitud)
+        {
+            q.setDato(p.getDato());
+            p = p.getLd();
+            q = q.getLd();
+            i++;
+        }
+    }
+
 }
