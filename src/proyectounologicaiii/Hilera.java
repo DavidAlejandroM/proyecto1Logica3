@@ -31,7 +31,7 @@ public class Hilera extends ListaDoblementeLigada
     public NodoDoble getNodoI(int i)
     {
         NodoDoble p = this.primerNodo();
-        for(int j = 0; j <= i; j++)
+        for(int j = 1; j <= i; j++)
         {
             p = p.getLd();
         }
