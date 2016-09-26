@@ -31,7 +31,7 @@ public class Hilera extends ListaDoblementeLigada
     public NodoDoble getNodoI(int i)
     {
         NodoDoble p = this.primerNodo();
-        for(int j = 0; j <= i; j++)
+        for(int j = 1; j <= i; j++)
         {
             p = p.getLd();
         }
@@ -106,6 +106,93 @@ public class Hilera extends ListaDoblementeLigada
             q = q.getLd();
             i++;
         }
+    }
+    
+    public boolean esSubstring(Hilera h1)
+    {
+        boolean x = false;
+        int i = 0;
+        NodoDoble p = h1.primero;
+        NodoDoble r = this.primero;
+        if (this.longitud < h1.longitud)
+        {
+            while ((r != null) && (i < h1.longitud))
+            {
+                if (p.getDato() == r.getDato())
+                {
+                    p = p.getLd();
+                    r = r.getLd();
+                }
+                else
+                {
+                    r = this.primero;
+                    p = p.getLd();
+                }
+                i++;
+            }
+            if (r == null)
+            {
+                System.out.println("El this es subhilera de la nueva hilera");
+                x = true;
+            }
+            else
+            {
+                System.out.println("No es subhilera");
+            }
+        }
+        else if(this.longitud > h1.longitud)
+        {
+            while ((p != null) && (i < this.longitud))
+            {
+                if (p.getDato() == r.getDato())
+                {
+                    p = p.getLd();
+                    r = r.getLd();
+                }
+                else
+                {
+                    p = h1.primero;
+                    r = r.getLd();
+                }
+                i++;
+            }
+            if (p == null)
+            {
+                System.out.println("La nueva hilera es subhilera del this");
+                x = true;
+            }
+            else
+            {
+                System.out.println("No es subhilera");
+            }
+        }
+        else
+        {
+            while ((p != null) && (i < this.longitud) && (r != null))
+            {
+                if (p.getDato() == r.getDato())
+                {
+                    p = p.getLd();
+                    r = r.getLd();
+                }
+                else
+                {
+                    System.out.println("No es subhilera");
+                    x = false;
+                }
+                i++;
+            }
+            if (p == null && r == null)
+            {
+                System.out.println("Son iguales");
+                x = true;
+            }
+            else
+            {
+                System.out.println("No es subhilera");
+            }
+        }
+        return x;
     }
 
 }
