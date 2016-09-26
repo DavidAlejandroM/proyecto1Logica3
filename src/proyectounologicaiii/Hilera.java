@@ -8,7 +8,6 @@ package proyectounologicaiii;
 public class Hilera extends ListaDoblementeLigada
 {
     private int longitud;
-    private int longitudAux;
 
     public Hilera() 
     {
@@ -194,5 +193,53 @@ public class Hilera extends ListaDoblementeLigada
         }
         return x;
     }
-
+    
+    public Hilera copiar()
+    {
+        Hilera s = new Hilera();
+        NodoDoble p = this.primero;
+        for (int i = 0; i < this.longitud; i++)
+        {
+            s.insertarCaracter((char)p.getDato());
+            p = p.getLd();
+        }
+        return s;
+    }   
+    
+    public boolean esPalindromo()
+    {
+        boolean x = true;
+        Hilera h = this.copiar();
+        NodoDoble p = this.primero;
+        NodoDoble r = h.ultimo;
+        for (int i = 0; i < this.longitud; i++)
+        {
+            if (p.getDato() != r.getDato())
+            {
+                x = false;
+                System.out.println("No es palíndromo");
+                return x;
+            }
+        }
+        System.out.println("Sí es palíndromo");
+        return x;
+    }
+    
+    public boolean esAnagrama(Hilera h)
+    {
+        boolean x = true;
+        NodoDoble p = this.primero;
+        NodoDoble r = h.ultimo;
+        for (int i = 0; i < this.longitud; i++)
+        {
+            if (p.getDato() != r.getDato())
+            {
+                x = false;
+                System.out.println("No es anagrama");
+                return x;
+            }
+        }
+        System.out.println("Sí es anagrama");
+        return x;
+    }
 }
