@@ -2,7 +2,7 @@
  * Yaqueline Hoyos Montes 1038407865
  * Alejandro Marín Alzate
  */
-package proyectounologicaiii;
+package modelo;
 
 /**
  *
