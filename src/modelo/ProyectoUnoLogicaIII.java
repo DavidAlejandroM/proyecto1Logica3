@@ -14,7 +14,7 @@ public class ProyectoUnoLogicaIII
     /**
      * @param args the command line arguments
      */
-    
+    /*
     public static void main(String[] args) 
     {
        Hilera a = new Hilera();
@@ -23,7 +23,7 @@ public class ProyectoUnoLogicaIII
        a.insertarCaracter('l');       
        a.insertarCaracter('a');
        
-       a.recorreIzqDer();/*
+       a.recorreIzqDer();
        NodoDoble y = a.primerNodo().getLd();
        a.eliminarNodo(a.getNodoI(2));
        a.recorreIzqDer();
@@ -33,7 +33,7 @@ public class ProyectoUnoLogicaIII
        System.out.println(a.getTamaño());
        a.ordenarAlfabeticamente();
        
-       a.recorreIzqDer();*/
+       a.recorreIzqDer();
        System.out.println(a.getTamaño());
        Hilera b = new Hilera();
        b.insertarCaracter('r');
@@ -42,6 +42,6 @@ public class ProyectoUnoLogicaIII
        b.insertarCaracter('l');       
        b.insertarCaracter('a');
        a.esSubstring(b);
-    }
+    }*/
     
 }

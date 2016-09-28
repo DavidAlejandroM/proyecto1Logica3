@@ -8,7 +8,7 @@ package modelo;
 public class Hilera extends ListaDoblementeLigada
 {
     private int longitud;
-    private int longitudAux;
+    
 
     public Hilera() 
     {
