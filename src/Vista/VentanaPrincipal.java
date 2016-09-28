@@ -5,8 +5,11 @@
  */
 package Vista;
 
+
 import java.awt.Dimension;
 import javax.swing.JPanel;
+import Vista.panelFormInsertar;
+import modelo.Hilera;
 
 /**
  *
@@ -14,11 +17,20 @@ import javax.swing.JPanel;
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
+    private Dimension dimension;
+    private controlador.ControladorPrincipal cp;
+    private JPanel panelFormInsertar;
+    private Hilera hilera;
     /**
      * Creates new form jPanelMain
      */
-    public VentanaPrincipal() {
+    public VentanaPrincipal(Dimension dimension,controlador.ControladorPrincipal cp) {
+        this.dimension = dimension;
+        this.cp = cp;
+        this.panelFormInsertar = new panelFormInsertar(cp.hilera,cp);
         initComponents();
+        panelBotones.setSize(300, this.dimension.height);
+        
     }
 
     /**
@@ -31,7 +43,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         panelBotones = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        btnInsertar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -40,50 +52,61 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         panelHilera = new javax.swing.JPanel();
+        panelTrabajo = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        panelBotones.setSize(300, ((this.dimension.height)- 200));
         panelBotones.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         panelBotones.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         panelBotones.setDoubleBuffered(false);
         panelBotones.setMinimumSize(new java.awt.Dimension(200, 200));
         panelBotones.setLayout(new java.awt.GridLayout(4, 2));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnInsertar.setText("Insertar");
+        btnInsertar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnInsertarActionPerformed(evt);
             }
         });
-        panelBotones.add(jButton1);
+        panelBotones.add(btnInsertar);
 
         jButton2.setText("jButton2");
+        jButton2.setEnabled(false);
         panelBotones.add(jButton2);
 
         jButton3.setText("jButton3");
+        jButton3.setEnabled(false);
         panelBotones.add(jButton3);
 
         jButton4.setText("jButton4");
+        jButton4.setEnabled(false);
         panelBotones.add(jButton4);
 
         jButton5.setText("jButton5");
+        jButton5.setEnabled(false);
         panelBotones.add(jButton5);
 
         jButton6.setText("jButton6");
+        jButton6.setEnabled(false);
         panelBotones.add(jButton6);
 
         jButton7.setText("jButton7");
+        jButton7.setEnabled(false);
         panelBotones.add(jButton7);
 
         jButton8.setText("jButton8");
+        jButton8.setEnabled(false);
         panelBotones.add(jButton8);
 
         panelHilera.setBackground(new java.awt.Color(204, 204, 255));
         panelHilera.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         panelHilera.setLayout(new java.awt.CardLayout());
+
+        panelTrabajo.setLayout(new java.awt.CardLayout());
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -100,23 +123,28 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addComponent(panelHilera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 777, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelTrabajo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 771, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panelHilera, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelTrabajo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
+        cp.cleanPanel(panelTrabajo);
+        cp.setPanel(this.panelFormInsertar, this.panelTrabajo);
+    }//GEN-LAST:event_btnInsertarActionPerformed
 
     public JPanel getPanelHilera() {
         return panelHilera;
@@ -133,7 +161,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnInsertar;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -145,6 +173,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel panelBotones;
-    private javax.swing.JPanel panelHilera;
+    public javax.swing.JPanel panelHilera;
+    private javax.swing.JPanel panelTrabajo;
     // End of variables declaration//GEN-END:variables
 }

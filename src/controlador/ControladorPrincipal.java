@@ -17,41 +17,60 @@ import javax.swing.JPanel;
  * @author Alejandro
  */
 public class ControladorPrincipal {
-    private Hilera hilera;
+    public Hilera hilera;
+    public VentanaPrincipal vp;
+    private Dimension dimension;
+
+
+    
+    
 
     public ControladorPrincipal() {
+        
+        dimension = Toolkit.getDefaultToolkit().getScreenSize();
+        hilera = new Hilera();
+        vp = new VentanaPrincipal(dimension,this);
+        vp.setSize(dimension);
+        vp.setMinimumSize(new Dimension(800, 600));
+        vp.setVisible(true);
         
     }
     
     public static void main(String args[]) {
        
-       VentanaPrincipal vp = new VentanaPrincipal();
-        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
-        
-        vp.setSize(dimension);
-        
-        vp.setVisible(true);
-        
-        JPanel mainPanel = new JPanel();
-        
-        mainPanel.setSize(100, dimension.width);
-        mainPanel.setLayout(new java.awt.GridLayout(1, 40));
+       ControladorPrincipal cp = new ControladorPrincipal();
+  
+       
         
         
-        
-        for (int i = 0; i < 10; i++)
-        {
-            JButton aButton = new JButton(String.valueOf(i));
-            mainPanel.add(aButton);
-           
-            System.out.println("Added: " + (i + 1) + "buttons");
-        }
-        vp.setSizeButtonsMenu(dimension);
-        vp.setPanelHilera(mainPanel);
-        
-        
-        
-        
+    }
+    
+    /**
+     * La situiente funcion limpia un panel JPanel para posteriormente dibujar
+     * el panel que se necesita
+     *
+     * @param jp panel que se va limpiar
+     */
+    public void cleanPanel(JPanel jp) {
+        jp.removeAll();
+        jp.repaint();
+        jp.revalidate();
+    }
+
+    /**
+     * La siguiente funcion agregar el panel que se va usar jp en el panel
+     * JPanelWork
+     *
+     * @param jp es el panel que se va agregar en el panel JpOri
+     */
+    public void setPanel(JPanel jp, JPanel jpOri) {
+        jpOri.add(jp);
+        jpOri.repaint();
+        jpOri.revalidate();
+    }
+    
+    public Dimension getDimension() {
+        return dimension;
     }
     
     
