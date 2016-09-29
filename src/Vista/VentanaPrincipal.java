@@ -9,6 +9,7 @@ package Vista;
 import java.awt.Dimension;
 import javax.swing.JPanel;
 import Vista.panelFormInsertar;
+import Vista.panelFormEliminar;
 import modelo.Hilera;
 
 /**
@@ -19,7 +20,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private Dimension dimension;
     private controlador.ControladorPrincipal cp;
-    private JPanel panelFormInsertar;
+    
+    
     private Hilera hilera;
     /**
      * Creates new form jPanelMain
@@ -27,7 +29,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal(Dimension dimension,controlador.ControladorPrincipal cp) {
         this.dimension = dimension;
         this.cp = cp;
-        this.panelFormInsertar = new panelFormInsertar(cp.hilera,cp);
+        
         initComponents();
         panelBotones.setSize(300, this.dimension.height);
         
@@ -44,13 +46,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         panelBotones = new javax.swing.JPanel();
         btnInsertar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
+        btnInvertir = new javax.swing.JButton();
+        btnOrdenar = new javax.swing.JButton();
+        btnSubString = new javax.swing.JButton();
+        btnPalindromo = new javax.swing.JButton();
+        bntAnagrama = new javax.swing.JButton();
         panelHilera = new javax.swing.JPanel();
         panelTrabajo = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -74,33 +76,38 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         panelBotones.add(btnInsertar);
 
-        jButton2.setText("jButton2");
-        jButton2.setEnabled(false);
-        panelBotones.add(jButton2);
+        btnEliminar.setText("Eliminar");
+        btnEliminar.setEnabled(false);
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+        panelBotones.add(btnEliminar);
 
-        jButton3.setText("jButton3");
-        jButton3.setEnabled(false);
-        panelBotones.add(jButton3);
+        btnModificar.setText("Modificar");
+        btnModificar.setEnabled(false);
+        panelBotones.add(btnModificar);
 
-        jButton4.setText("jButton4");
-        jButton4.setEnabled(false);
-        panelBotones.add(jButton4);
+        btnInvertir.setText("Invertir");
+        btnInvertir.setEnabled(false);
+        panelBotones.add(btnInvertir);
 
-        jButton5.setText("jButton5");
-        jButton5.setEnabled(false);
-        panelBotones.add(jButton5);
+        btnOrdenar.setText("Ordenar A-->Z");
+        btnOrdenar.setEnabled(false);
+        panelBotones.add(btnOrdenar);
 
-        jButton6.setText("jButton6");
-        jButton6.setEnabled(false);
-        panelBotones.add(jButton6);
+        btnSubString.setText("SubString");
+        btnSubString.setEnabled(false);
+        panelBotones.add(btnSubString);
 
-        jButton7.setText("jButton7");
-        jButton7.setEnabled(false);
-        panelBotones.add(jButton7);
+        btnPalindromo.setText("Palindromo");
+        btnPalindromo.setEnabled(false);
+        panelBotones.add(btnPalindromo);
 
-        jButton8.setText("jButton8");
-        jButton8.setEnabled(false);
-        panelBotones.add(jButton8);
+        bntAnagrama.setText("Anagrama");
+        bntAnagrama.setEnabled(false);
+        panelBotones.add(bntAnagrama);
 
         panelHilera.setBackground(new java.awt.Color(204, 204, 255));
         panelHilera.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -120,12 +127,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelHilera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelTrabajo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 771, Short.MAX_VALUE))
+            .addComponent(panelHilera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,9 +149,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
+        JPanel panelFormInsertar = new panelFormInsertar(cp.hilera,cp);
         cp.cleanPanel(panelTrabajo);
-        cp.setPanel(this.panelFormInsertar, this.panelTrabajo);
+        cp.setPanel(panelFormInsertar, this.panelTrabajo);
     }//GEN-LAST:event_btnInsertarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        JPanel panelFormEliminar = new panelFormEliminar(cp.hilera,cp);
+        cp.cleanPanel(panelTrabajo);
+        cp.setPanel(panelFormEliminar, this.panelTrabajo);
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     public JPanel getPanelHilera() {
         return panelHilera;
@@ -161,14 +175,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton bntAnagrama;
+    public javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnInsertar;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    public javax.swing.JButton btnInvertir;
+    public javax.swing.JButton btnModificar;
+    public javax.swing.JButton btnOrdenar;
+    public javax.swing.JButton btnPalindromo;
+    public javax.swing.JButton btnSubString;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
