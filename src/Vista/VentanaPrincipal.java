@@ -107,6 +107,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         bntAnagrama.setText("Anagrama");
         bntAnagrama.setEnabled(false);
+        bntAnagrama.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntAnagramaActionPerformed(evt);
+            }
+        });
         panelBotones.add(bntAnagrama);
 
         panelHilera.setBackground(new java.awt.Color(204, 204, 255));
@@ -159,6 +164,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         cp.cleanPanel(panelTrabajo);
         cp.setPanel(panelFormEliminar, this.panelTrabajo);
     }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void bntAnagramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntAnagramaActionPerformed
+        JPanel panelFormGeneral = new panelFormGeneral(cp.hilera, cp, 3);
+        cp.cleanPanel(panelTrabajo);
+        cp.setPanel(panelFormGeneral, panelTrabajo);
+    }//GEN-LAST:event_bntAnagramaActionPerformed
 
     public JPanel getPanelHilera() {
         return panelHilera;
