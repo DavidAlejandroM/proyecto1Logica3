@@ -1,5 +1,5 @@
 
-package proyectounologicaiii;
+package modelo;
 
 /**
  *
@@ -13,6 +13,18 @@ public class Hilera extends ListaDoblementeLigada
     {
         super();
         longitud = 0;
+    }
+    
+    public char[] hilera2Char()
+    {
+        char[] c = new char[this.longitud];
+        NodoDoble p = this.primero;
+        for (int i = 0; i < longitud; i++) {
+            c[i] = (char) p.getDato();
+            p = p.getLd();
+        }
+        
+        return c;
     }
     
     public void insertarCaracter(char c)
@@ -46,6 +58,11 @@ public class Hilera extends ListaDoblementeLigada
        }
     }
     
+    public void eliminarUltimo()
+    {
+        longitud--;
+        this.desconectar(ultimo);
+    }
     public void eliminarNodo(NodoDoble x)
     {
         longitud--;
@@ -194,6 +211,7 @@ public class Hilera extends ListaDoblementeLigada
         return x;
     }
     
+
     public Hilera copiar()
     {
         Hilera s = new Hilera();
@@ -242,4 +260,13 @@ public class Hilera extends ListaDoblementeLigada
         System.out.println("Sí es anagrama");
         return x;
     }
+
+    public void borrerHilera()
+    {
+        primero = null;
+        ultimo = null;
+        longitud = 0;
+    }
+
+
 }
