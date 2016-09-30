@@ -8,10 +8,6 @@ package modelo;
 public class Hilera extends ListaDoblementeLigada
 {
     private int longitud;
-<<<<<<< HEAD:src/proyectounologicaiii/Hilera.java
-=======
-    
->>>>>>> refs/remotes/origin/Alejandro:src/modelo/Hilera.java
 
     public Hilera() 
     {
@@ -215,7 +211,7 @@ public class Hilera extends ListaDoblementeLigada
         return x;
     }
     
-<<<<<<< HEAD:src/proyectounologicaiii/Hilera.java
+
     public Hilera copiar()
     {
         Hilera s = new Hilera();
@@ -264,7 +260,7 @@ public class Hilera extends ListaDoblementeLigada
         System.out.println("Sí es anagrama");
         return x;
     }
-=======
+
     public void borrerHilera()
     {
         primero = null;
@@ -272,5 +268,5 @@ public class Hilera extends ListaDoblementeLigada
         longitud = 0;
     }
 
->>>>>>> refs/remotes/origin/Alejandro:src/modelo/Hilera.java
+
 }
