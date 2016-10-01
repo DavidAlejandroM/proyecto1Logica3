@@ -130,7 +130,7 @@ public class Hilera extends ListaDoblementeLigada
         int i = 0;
         NodoDoble p = h1.primero;
         NodoDoble r = this.primero;
-        if (this.longitud < h1.longitud)
+       /* if (this.longitud < h1.longitud)
         {
             while ((r != null) && (i < h1.longitud))
             {
@@ -157,7 +157,7 @@ public class Hilera extends ListaDoblementeLigada
             }
         }
         else if(this.longitud > h1.longitud)
-        {
+        {*/
             while ((p != null) && (i < this.longitud))
             {
                 if (p.getDato() == r.getDato())
@@ -181,7 +181,7 @@ public class Hilera extends ListaDoblementeLigada
             {
                 System.out.println("No es subhilera");
             }
-        }
+        /*}
         else
         {
             while ((p != null) && (i < this.longitud) && (r != null))
@@ -207,7 +207,7 @@ public class Hilera extends ListaDoblementeLigada
             {
                 System.out.println("No es subhilera");
             }
-        }
+        }*/
         return x;
     }
     
@@ -244,20 +244,39 @@ public class Hilera extends ListaDoblementeLigada
     }
     
     public boolean esAnagrama(Hilera h)
-    {
-        boolean x = true;
+    {   
+        
+        boolean x = false;
+        Hilera hilera2 = h.copiar();
         NodoDoble p = this.primero;
-        NodoDoble r = h.ultimo;
-        for (int i = 0; i < this.longitud; i++)
-        {
-            if (p.getDato() != r.getDato())
+        NodoDoble r = hilera2.primero;
+        NodoDoble aux;
+        if (this.longitud == h.longitud) {
+            for (int i = 0; i < this.longitud; i++)
             {
-                x = false;
-                System.out.println("No es anagrama");
-                return x;
+            r = hilera2.primero;
+            boolean val = false;
+            while (!hilera2.esVacia() && val == false) {
+                 aux = r.getLd();
+                 if (r.getDato() == p.getDato()) {
+                     val = true;
+                     hilera2.eliminarNodo(r);
+                }
+                 r = aux;        
+            }
+            
+            p = p.getLd();
+            }
+            if (hilera2.longitud == 0) {
+            System.out.println("Sí es anagrama");
+            x = true;
             }
         }
-        System.out.println("Sí es anagrama");
+        
+        
+        
+        
+        
         return x;
     }
 
@@ -266,6 +285,10 @@ public class Hilera extends ListaDoblementeLigada
         primero = null;
         ultimo = null;
         longitud = 0;
+    }
+    
+    public void borrarDatoi(int i){
+        desconectar(getNodoI(i));
     }
 
 

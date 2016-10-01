@@ -73,6 +73,11 @@ public class panelFormInsertar extends javax.swing.JPanel {
         });
 
         jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -126,8 +131,7 @@ public class panelFormInsertar extends javax.swing.JPanel {
         else{
             evt.consume();
         }
-        hilera.recorreIzqDer();
-        System.out.println("---------------------------");
+        
     }//GEN-LAST:event_jTextField1KeyTyped
 
     
@@ -166,6 +170,10 @@ public class panelFormInsertar extends javax.swing.JPanel {
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+            cp.cleanPanel(this);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

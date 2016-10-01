@@ -91,6 +91,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         btnInvertir.setText("Invertir");
         btnInvertir.setEnabled(false);
+        btnInvertir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInvertirActionPerformed(evt);
+            }
+        });
         panelBotones.add(btnInvertir);
 
         btnOrdenar.setText("Ordenar A-->Z");
@@ -99,10 +104,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         btnSubString.setText("SubString");
         btnSubString.setEnabled(false);
+        btnSubString.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubStringActionPerformed(evt);
+            }
+        });
         panelBotones.add(btnSubString);
 
         btnPalindromo.setText("Palindromo");
         btnPalindromo.setEnabled(false);
+        btnPalindromo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPalindromoActionPerformed(evt);
+            }
+        });
         panelBotones.add(btnPalindromo);
 
         bntAnagrama.setText("Anagrama");
@@ -166,10 +181,28 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void bntAnagramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntAnagramaActionPerformed
-        JPanel panelFormGeneral = new panelFormGeneral(cp.hilera, cp, 3);
+        JPanel panelFormAnagrama = new panelFormAnagrama(cp.hilera,cp);
         cp.cleanPanel(panelTrabajo);
-        cp.setPanel(panelFormGeneral, panelTrabajo);
+        cp.setPanel(panelFormAnagrama, this.panelTrabajo);
     }//GEN-LAST:event_bntAnagramaActionPerformed
+
+    private void btnPalindromoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPalindromoActionPerformed
+        JPanel panelPalindromo = new panelFormPalindromo(cp.hilera, cp, 0);
+        cp.cleanPanel(panelTrabajo);
+        cp.setPanel(panelPalindromo, panelTrabajo);
+    }//GEN-LAST:event_btnPalindromoActionPerformed
+
+    private void btnInvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInvertirActionPerformed
+        JPanel panelFormInvertir = new panelFormInvertir(cp.hilera, cp, 1);
+        cp.cleanPanel(panelTrabajo);
+        cp.setPanel(panelFormInvertir, panelTrabajo);
+    }//GEN-LAST:event_btnInvertirActionPerformed
+
+    private void btnSubStringActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubStringActionPerformed
+        JPanel panel = new panelFormSubString(cp.hilera, cp);
+        cp.cleanPanel(panelTrabajo);
+        cp.setPanel(panel, panelTrabajo);
+    }//GEN-LAST:event_btnSubStringActionPerformed
 
     public JPanel getPanelHilera() {
         return panelHilera;
