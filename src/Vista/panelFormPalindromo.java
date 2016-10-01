@@ -14,42 +14,38 @@ import modelo.Hilera;
  *
  * @author Alejandro
  */
-public class panelFormGeneral extends javax.swing.JPanel {
+public class panelFormPalindromo extends javax.swing.JPanel {
 
     /**
      * Creates new form panelFormInsertar
      */
     public Hilera hilera;
     private controlador.ControladorPrincipal cp;
-    public panelFormGeneral(Hilera hilera, controlador.ControladorPrincipal cp,int key) {
+    /**
+     * El Constructor
+     * @param hilera la hilera que se trabaja en este panel
+     * @param cp el controlador principal
+     * @param key 1 para mostrar invertir , 0 para validar palindromo y mostrar, 
+     */
+    public panelFormPalindromo(Hilera hilera, controlador.ControladorPrincipal cp,int key) {
         this.hilera = hilera;
         this.cp = cp;
         initComponents();
         this.setMinimumSize(new Dimension(300, 300));
-        
-        switch(key)
-        {
-            case 0:
-            {
-                setTextTitle("¿La Hilera es un Anagrama?");
-            }
-            case 1:
-            {
-                setTextTitle("¿La Hilera es un Anagrama?");
-            }
-            case 2:
-            {
-                setTextTitle("¿La Hilera es Palindromo?");
-            }
-            case 3:
-            {
-                setTextTitle("¿La Hilera es Anagrama?");
-                if (true) {
-                    
-                }
-            }
-            
+        setTextTitle("¿La Hilera es Palindromo?");
+        if (hilera.esPalindromo()) {
+            jLabel2.setText("!!! Si !!!");
+
         }
+        else
+        {
+            jLabel2.setText("!!! No !!!");
+        }
+       
+                
+          
+            
+        
                
     }
     
@@ -79,6 +75,7 @@ public class panelFormGeneral extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Arial Narrow", 0, 36)); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Arial Narrow", 0, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 0, 51));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

@@ -20,6 +20,7 @@ public class ControladorPrincipal {
     public Hilera hilera;
     public VentanaPrincipal vp;
     private Dimension dimension;
+    private JButton[] btnsHilera;
 
 
     
@@ -34,6 +35,11 @@ public class ControladorPrincipal {
         vp.setMinimumSize(new Dimension(800, 600));
         vp.setVisible(true);
         
+    }
+    
+    void setButtonsHilera(JButton[] buttons)
+    {
+        this.btnsHilera = buttons;
     }
     
     
