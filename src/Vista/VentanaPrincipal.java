@@ -100,6 +100,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         btnOrdenar.setText("Ordenar A-->Z");
         btnOrdenar.setEnabled(false);
+        btnOrdenar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrdenarActionPerformed(evt);
+            }
+        });
         panelBotones.add(btnOrdenar);
 
         btnSubString.setText("SubString");
@@ -175,6 +180,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInsertarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        bntAnagrama.setEnabled(false);
+        btnInsertar.setEnabled(false);
+        btnInvertir.setEnabled(false);
+        btnModificar.setEnabled(false);
+        btnOrdenar.setEnabled(false);
+        btnPalindromo.setEnabled(false);
+        btnSubString.setEnabled(false);
+        
+        cp.eventosBotonesHilera();
+        cp.setControl(true);
         JPanel panelFormEliminar = new panelFormEliminar(cp.hilera,cp);
         cp.cleanPanel(panelTrabajo);
         cp.setPanel(panelFormEliminar, this.panelTrabajo);
@@ -204,6 +219,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         cp.setPanel(panel, panelTrabajo);
     }//GEN-LAST:event_btnSubStringActionPerformed
 
+    private void btnOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnOrdenarActionPerformed
+
     public JPanel getPanelHilera() {
         return panelHilera;
     }
@@ -221,7 +240,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton bntAnagrama;
     public javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnInsertar;
+    public javax.swing.JButton btnInsertar;
     public javax.swing.JButton btnInvertir;
     public javax.swing.JButton btnModificar;
     public javax.swing.JButton btnOrdenar;

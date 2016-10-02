@@ -84,7 +84,7 @@ public class panelFormInsertar extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addContainerGap(23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextField1)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -92,7 +92,7 @@ public class panelFormInsertar extends javax.swing.JPanel {
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,27 +136,9 @@ public class panelFormInsertar extends javax.swing.JPanel {
 
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        char[] c = hilera.hilera2Char();
-        
-        
-        
-        JPanel mainPanel = new JPanel();
-        
-        mainPanel.setSize(cp.getDimension().width,100);
-        
-        mainPanel.setLayout(new java.awt.GridLayout(1, c.length));
-        mainPanel.setMinimumSize(new Dimension(300, 100));
-        for (int i = 0; i < c.length; i++) 
-        {
-            System.out.println(c[i]);
-            JButton aButton = new JButton(String.valueOf(c[i]));
-            aButton.setName("btn"+String.valueOf(i));
-            aButton.setMinimumSize(new Dimension(50, 100));
-            mainPanel.add(aButton);
-        }
-                        
+
         cp.cleanPanel(cp.vp.getPanelHilera());
-        cp.setPanel(mainPanel, cp.vp.getPanelHilera());
+        cp.setPanel(cp.panelBotonesHilera(hilera), cp.vp.getPanelHilera());
         
         cp.cleanPanel(this);
         

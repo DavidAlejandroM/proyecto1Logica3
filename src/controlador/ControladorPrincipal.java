@@ -9,6 +9,9 @@ import Vista.VentanaPrincipal;
 import java.awt.Dimension;
 import java.awt.LayoutManager;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.HashMap;
 import modelo.Hilera;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -21,7 +24,9 @@ public class ControladorPrincipal {
     public VentanaPrincipal vp;
     private Dimension dimension;
     private JButton[] btnsHilera;
-
+    private ActionListener actionListener;
+    private ActionListener actionListenerVacio;
+    private boolean control = false;
 
     
     
@@ -35,9 +40,41 @@ public class ControladorPrincipal {
         vp.setMinimumSize(new Dimension(800, 600));
         vp.setVisible(true);
         
+         actionListener = new ActionListener()
+            {
+                public void actionPerformed(ActionEvent actionEvent) {
+
+                        System.out.println(actionEvent.getActionCommand());
+                        JButton b = (JButton) actionEvent.getSource();
+                        for (int i = 0; i < btnsHilera.length; i++) {
+                            if (b==btnsHilera[i]) {
+                                hilera.eliminarNodo(i);
+                                cleanPanel(vp.panelHilera);
+                                setPanel(panelBotonesHilera(hilera),vp.panelHilera);
+                            }
+                        }
+                        
+                }
+            };
+         actionListenerVacio = new ActionListener()
+            {
+                public void actionPerformed(ActionEvent actionEvent) {
+  
+                }
+            };
+        
+    }
+
+    public boolean isControl() {
+        return control;
+    }
+
+    public void setControl(boolean control) {
+        this.control = control;
     }
     
-    void setButtonsHilera(JButton[] buttons)
+    
+    public void setButtonsHilera(JButton[] buttons)
     {
         this.btnsHilera = buttons;
     }
@@ -81,5 +118,69 @@ public class ControladorPrincipal {
         return dimension;
     }
     
+    public JPanel panelBotonesHilera(Hilera h)
+    {
+        if (!h.esVacia()) {
+            char[] c = h.hilera2Char();
+            btnsHilera = new JButton[h.getLongitud()];
+            HashMap<String,JButton> buttonCache = new HashMap<String,JButton>();
+        
+            JPanel mainPanel = new JPanel();
+
+            mainPanel.setSize(getDimension().width,100);
+
+            mainPanel.setLayout(new java.awt.GridLayout(1, c.length));
+            mainPanel.setMinimumSize(new Dimension(300, 100));
+            for (int i = 0; i < c.length; i++) 
+            {
+                System.out.println(c[i]);
+                JButton aButton = new JButton(String.valueOf(c[i]));
+                String s = String.valueOf(c[i]);
+                aButton.setName(s+String.valueOf(i));
+                aButton.setMinimumSize(new Dimension(50, 100));
+                aButton.setBorder(null);
+                aButton.setBorderPainted(false);
+                aButton.setContentAreaFilled(false);
+                aButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+                mainPanel.add(aButton);
+                int intC = (int) c[i];
+                if (intC <65 || intC >90) {
+                    s = s+s;
+                }
+
+                btnsHilera[i] = aButton;
+                
+                btnsHilera[i].setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/"+s+".png")));
+        }
+            if (!control) {
+                    quitarEventoBotones();
+                }
+                else
+                {
+                    eventosBotonesHilera();
+                }
+        return mainPanel;
+        }
+        else
+        {
+            return  null;
+        }
+    }
+    
+    public void eventosBotonesHilera()
+    {
+        for (int i = 0; i < btnsHilera.length; i++) {
+            btnsHilera[i].addActionListener(actionListener);
+        }
+    }
+    
+    public void quitarEventoBotones()
+    {
+        for (int i = 0; i < btnsHilera.length; i++) {
+            btnsHilera[i].addActionListener(actionListenerVacio);
+            
+        }
+    }
     
 }
