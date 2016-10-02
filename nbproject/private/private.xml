@@ -3,10 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Netbeans/proyecto1Logica3/src/controlador/ControladorPrincipal.java</file>
-            <file>file:/D:/Netbeans/proyecto1Logica3/src/Vista/panelFormInsertar.java</file>
-            <file>file:/D:/Netbeans/proyecto1Logica3/src/Vista/panelFormInvertir.java</file>
-            <file>file:/D:/Netbeans/proyecto1Logica3/src/Vista/VentanaPrincipal.java</file>
+            <file>file:/D:/Documents/GitHub/proyecto1Logica3/src/controlador/ControladorPrincipal.java</file>
+            <file>file:/D:/Documents/GitHub/proyecto1Logica3/src/modelo/Hilera.java</file>
+            <file>file:/D:/Documents/GitHub/proyecto1Logica3/src/Vista/panelFormInsertar.java</file>
+            <file>file:/D:/Documents/GitHub/proyecto1Logica3/src/Vista/VentanaPrincipal.java</file>
+            <file>file:/D:/Documents/GitHub/proyecto1Logica3/src/Vista/panelFormEliminar.java</file>
         </group>
     </open-files>
 </project-private>

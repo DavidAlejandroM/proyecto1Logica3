@@ -34,7 +34,7 @@ public class Hilera extends ListaDoblementeLigada
         longitud = longitud + 1;
     }
 
-    public int getTamaño() 
+    public int getLongitud() 
     {
         return longitud;
     }
@@ -67,6 +67,11 @@ public class Hilera extends ListaDoblementeLigada
     {
         longitud--;
         this.desconectar(x);
+    }
+    
+    public void eliminarNodo(int x)
+    {
+        eliminarNodo(this.getNodoI(x));
     }
     
     public void invertir()
