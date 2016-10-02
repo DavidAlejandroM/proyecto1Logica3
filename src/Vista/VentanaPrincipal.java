@@ -44,6 +44,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         panelBotones = new javax.swing.JPanel();
         btnInsertar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
@@ -60,15 +61,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         panelBotones.setSize(300, ((this.dimension.height)- 200));
-        panelBotones.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        panelBotones.setBackground(new java.awt.Color(255, 255, 255));
+        panelBotones.setBorder(javax.swing.BorderFactory.createTitledBorder("Operaciones"));
         panelBotones.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         panelBotones.setDoubleBuffered(false);
         panelBotones.setMinimumSize(new java.awt.Dimension(200, 200));
-        panelBotones.setLayout(new java.awt.GridLayout(4, 2));
+        panelBotones.setLayout(new java.awt.GridLayout(8, 1));
 
-        btnInsertar.setText("Insertar");
+        btnInsertar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/insertar1.png"))); // NOI18N
+        btnInsertar.setBorder(null);
+        btnInsertar.setBorderPainted(false);
+        btnInsertar.setContentAreaFilled(false);
+        btnInsertar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnInsertar.setPreferredSize(new java.awt.Dimension(71, 50));
+        btnInsertar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/insertar2.png"))); // NOI18N
+        btnInsertar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/insertar2.png"))); // NOI18N
         btnInsertar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInsertarActionPerformed(evt);
@@ -76,8 +88,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         panelBotones.add(btnInsertar);
 
-        btnEliminar.setText("Eliminar");
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminar1.png"))); // NOI18N
+        btnEliminar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnEliminar.setBorderPainted(false);
+        btnEliminar.setContentAreaFilled(false);
+        btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEliminar.setEnabled(false);
+        btnEliminar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminar2.png"))); // NOI18N
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarActionPerformed(evt);
@@ -85,12 +102,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         panelBotones.add(btnEliminar);
 
-        btnModificar.setText("Modificar");
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificar1.png"))); // NOI18N
+        btnModificar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnModificar.setBorderPainted(false);
+        btnModificar.setContentAreaFilled(false);
         btnModificar.setEnabled(false);
+        btnModificar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificar2.png"))); // NOI18N
         panelBotones.add(btnModificar);
 
-        btnInvertir.setText("Invertir");
+        btnInvertir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/invertir1.png"))); // NOI18N
+        btnInvertir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnInvertir.setBorderPainted(false);
+        btnInvertir.setContentAreaFilled(false);
         btnInvertir.setEnabled(false);
+        btnInvertir.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/invertir2.png"))); // NOI18N
         btnInvertir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInvertirActionPerformed(evt);
@@ -98,8 +123,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         panelBotones.add(btnInvertir);
 
-        btnOrdenar.setText("Ordenar A-->Z");
+        btnOrdenar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ordenar1.png"))); // NOI18N
+        btnOrdenar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnOrdenar.setBorderPainted(false);
+        btnOrdenar.setContentAreaFilled(false);
         btnOrdenar.setEnabled(false);
+        btnOrdenar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ordenar2.png"))); // NOI18N
         btnOrdenar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOrdenarActionPerformed(evt);
@@ -107,8 +136,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         panelBotones.add(btnOrdenar);
 
-        btnSubString.setText("SubString");
+        btnSubString.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/subhilera1.png"))); // NOI18N
+        btnSubString.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnSubString.setBorderPainted(false);
+        btnSubString.setContentAreaFilled(false);
         btnSubString.setEnabled(false);
+        btnSubString.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/subhilera2.png"))); // NOI18N
         btnSubString.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubStringActionPerformed(evt);
@@ -116,8 +149,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         panelBotones.add(btnSubString);
 
-        btnPalindromo.setText("Palindromo");
+        btnPalindromo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/palindromo1.png"))); // NOI18N
+        btnPalindromo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnPalindromo.setBorderPainted(false);
+        btnPalindromo.setContentAreaFilled(false);
         btnPalindromo.setEnabled(false);
+        btnPalindromo.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/palindromo2.png"))); // NOI18N
         btnPalindromo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPalindromoActionPerformed(evt);
@@ -125,8 +162,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         panelBotones.add(btnPalindromo);
 
-        bntAnagrama.setText("Anagrama");
+        bntAnagrama.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/anagrama1.png"))); // NOI18N
+        bntAnagrama.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        bntAnagrama.setBorderPainted(false);
+        bntAnagrama.setContentAreaFilled(false);
         bntAnagrama.setEnabled(false);
+        bntAnagrama.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/anagrama2.png"))); // NOI18N
         bntAnagrama.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bntAnagramaActionPerformed(evt);
@@ -134,11 +175,38 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         panelBotones.add(bntAnagrama);
 
-        panelHilera.setBackground(new java.awt.Color(204, 204, 255));
-        panelHilera.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        panelHilera.setBackground(new java.awt.Color(255, 255, 255));
+        panelHilera.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         panelHilera.setLayout(new java.awt.CardLayout());
 
+        panelTrabajo.setBackground(new java.awt.Color(255, 255, 255));
         panelTrabajo.setLayout(new java.awt.CardLayout());
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelHilera, javax.swing.GroupLayout.DEFAULT_SIZE, 1008, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(3, 3, 3)
+                .addComponent(panelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelTrabajo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(panelHilera, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(panelTrabajo, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 151, Short.MAX_VALUE))
+                    .addComponent(panelBotones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        getContentPane().add(jPanel1);
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -147,28 +215,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelTrabajo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 771, Short.MAX_VALUE))
-            .addComponent(panelHilera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelHilera, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelTrabajo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -249,6 +295,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel panelBotones;
     public javax.swing.JPanel panelHilera;
     private javax.swing.JPanel panelTrabajo;

@@ -79,6 +79,8 @@ public class panelFormInvertir extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel1.setFont(new java.awt.Font("Arial Narrow", 0, 36)); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Arial Narrow", 0, 36)); // NOI18N

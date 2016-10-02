@@ -44,6 +44,8 @@ public class panelFormModificar extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel1.setFont(new java.awt.Font("Arial Narrow", 0, 36)); // NOI18N
         jLabel1.setText("Hacer click en la letra que");
 

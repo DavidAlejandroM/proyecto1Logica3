@@ -118,12 +118,18 @@ public class ControladorPrincipal {
         return dimension;
     }
     
+    /**
+     * Esta funcion crea un panel de botones con el contenido de una hilera, 
+     * cada boton es un caracter de la hilera
+     * @param h hilera con el contenido que se va a crear los botones
+     * @return Panel con los botones ya listos
+     */
     public JPanel panelBotonesHilera(Hilera h)
     {
         if (!h.esVacia()) {
             char[] c = h.hilera2Char();
             btnsHilera = new JButton[h.getLongitud()];
-            HashMap<String,JButton> buttonCache = new HashMap<String,JButton>();
+            
         
             JPanel mainPanel = new JPanel();
 
@@ -133,16 +139,18 @@ public class ControladorPrincipal {
             mainPanel.setMinimumSize(new Dimension(300, 100));
             for (int i = 0; i < c.length; i++) 
             {
-                System.out.println(c[i]);
+                
                 JButton aButton = new JButton(String.valueOf(c[i]));
                 String s = String.valueOf(c[i]);
-                aButton.setName(s+String.valueOf(i));
+                //aButton.setName(s+String.valueOf(i));
                 aButton.setMinimumSize(new Dimension(50, 100));
                 aButton.setBorder(null);
+                aButton.setText("");
                 aButton.setBorderPainted(false);
                 aButton.setContentAreaFilled(false);
                 aButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
+                aButton.setFocusPainted(false);
+                //aButton.setBackground(new java.awt.Color(255, 255, 255));
                 mainPanel.add(aButton);
                 int intC = (int) c[i];
                 if (intC <65 || intC >90) {
@@ -160,6 +168,7 @@ public class ControladorPrincipal {
                 {
                     eventosBotonesHilera();
                 }
+            mainPanel.setBackground(new java.awt.Color(255, 255, 255));
         return mainPanel;
         }
         else
