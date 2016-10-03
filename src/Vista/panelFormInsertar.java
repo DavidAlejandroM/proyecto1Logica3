@@ -67,7 +67,6 @@ public class panelFormInsertar extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Arial Narrow", 0, 36)); // NOI18N
         jLabel1.setText("Ingrese la Hilera a trabajar");
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Aceptar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
