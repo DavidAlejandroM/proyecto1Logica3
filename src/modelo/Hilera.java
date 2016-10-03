@@ -8,13 +8,18 @@ package modelo;
 public class Hilera extends ListaDoblementeLigada
 {
     private int longitud;
-
+    /**
+     * Constructor de Hilera
+     */
     public Hilera() 
     {
         super();
         longitud = 0;
     }
-    
+    /**
+     * Devuelve la hilera en un vector char
+     * @return 
+     */
     public char[] hilera2Char()
     {
         char[] c = new char[this.longitud];
@@ -26,12 +31,22 @@ public class Hilera extends ListaDoblementeLigada
         
         return c;
     }
+   
+    /**
+     * Se ingresa caracter a caracter
+     * @param c
+     * @param i 
+     */
     public void insertarCartacter(char c,int i)
     {
         NodoDoble n = this.getNodoI(i);
         n.setDato(c);
     }
     
+    /**
+     * Inserta un solo caracter
+     * @param c 
+     */
     public void insertarCaracter(char c)
     {
         NodoDoble n = new NodoDoble(c);
@@ -39,11 +54,20 @@ public class Hilera extends ListaDoblementeLigada
         longitud = longitud + 1;
     }
 
+    /**
+     * Retorna la longitud de la hilera
+     * @return 
+     */
     public int getLongitud() 
     {
         return longitud;
     }
     
+    /**
+     * Obtiene un nodo deseado
+     * @param i
+     * @return 
+     */
     public NodoDoble getNodoI(int i)
     {
         NodoDoble p = this.primerNodo();
@@ -54,6 +78,10 @@ public class Hilera extends ListaDoblementeLigada
         return p;
     }
     
+    /**
+     * Modifica un vetor de char
+     * @param c 
+     */
     public void modificar(char[] c)
     {
        for(int i = 0; i < longitud; i++)
@@ -63,22 +91,37 @@ public class Hilera extends ListaDoblementeLigada
        }
     }
     
+    /**
+     * Elimina el ultimo nodo
+     */
     public void eliminarUltimo()
     {
         longitud--;
         this.desconectar(ultimo);
     }
+    
+    /**
+     * Elimina un nodo deseado, ingresando como parametro el dato del nodo
+     * @param x 
+     */
     public void eliminarNodo(NodoDoble x)
     {
         longitud--;
         this.desconectar(x);
     }
     
+    /**
+     * Elimina un nodo deseado, ingresando como parámetro la dirección de memoria
+     * @param x 
+     */
     public void eliminarNodo(int x)
     {
         eliminarNodo(this.getNodoI(x));
     }
     
+    /**
+     * Metodo para invertir la hilera original
+     */
     public void invertir()
     {
         int i = 0;
@@ -102,6 +145,9 @@ public class Hilera extends ListaDoblementeLigada
         }
     }
     
+    /**
+     * Metodo que me ordena alfabéticamente la hilera original
+     */
     public void ordenarAlfabeticamente()
     {
         int i = 0;
@@ -134,6 +180,11 @@ public class Hilera extends ListaDoblementeLigada
         }
     }
     
+    /**
+     * Éste método nos dice si una hilera nueva es substring de la hilera original
+     * @param h1
+     * @return 
+     */
     public boolean esSubstring(Hilera h1)
     {
         boolean x = false;
@@ -221,7 +272,10 @@ public class Hilera extends ListaDoblementeLigada
         return x;
     }
     
-
+    /**
+     * Éste método copia la hilera original
+     * @return 
+     */
     public Hilera copiar()
     {
         Hilera s = new Hilera();
@@ -234,6 +288,10 @@ public class Hilera extends ListaDoblementeLigada
         return s;
     }   
     
+    /**
+     * Nos retorna un booleano diciendo si la hilera es palíndromo o no
+     * @return 
+     */
     public boolean esPalindromo()
     {
         boolean x = true;
@@ -253,6 +311,11 @@ public class Hilera extends ListaDoblementeLigada
         return x;
     }
     
+    /**
+     * Nos retorna un booleano diciendo si una hilera nueva es anagrama de la hilera original
+     * @param h
+     * @return 
+     */
     public boolean esAnagrama(Hilera h)
     {   
         
@@ -290,6 +353,9 @@ public class Hilera extends ListaDoblementeLigada
         return x;
     }
 
+    /**
+     * Borra la hilera original
+     */
     public void borrerHilera()
     {
         primero = null;
@@ -297,6 +363,10 @@ public class Hilera extends ListaDoblementeLigada
         longitud = 0;
     }
     
+    /**
+     * Nos desconecta el nodo que tiene como parámetro la dirección de memoria
+     * @param i 
+     */
     public void borrarDatoi(int i){
         desconectar(getNodoI(i));
     }

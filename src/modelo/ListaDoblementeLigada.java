@@ -19,26 +19,46 @@ public class ListaDoblementeLigada
         ultimo = null;
     }
     
+    /**
+     * Retorna el primer nodo de la hilera
+     * @return 
+     */
     public NodoDoble primerNodo()
     {
         return primero;
     }
     
+    /**
+     * Retorna el último nodo de la hilera
+     * @return 
+     */
     public NodoDoble ultimoNodo()
     {
         return ultimo;
     }
     
+    /**
+     * Nos indica cuando el recorrido de la hilera llega al final
+     * @param x
+     * @return 
+     */
     public boolean finDeRecorrido(NodoDoble x)
     {
         return x == null;
     }
     
+    /**
+     * Nos indica si la lista está vacía
+     * @return 
+     */
     public boolean esVacia()
     {
         return primero == null;
     }
     
+    /**
+     * Recorre e imprime la lista de izquierda a derecha
+     */
     public void recorreIzqDer()
     {
         NodoDoble p;
@@ -50,6 +70,9 @@ public class ListaDoblementeLigada
         }
     }
     
+    /**
+     * Recorre e imprime la lista de derecha a izquierda
+     */
     public void recorreDerIzq()
     {
         NodoDoble p;
@@ -61,6 +84,11 @@ public class ListaDoblementeLigada
         }
     }
     
+    /**
+     * Nos indica el nodo anterior a un nodo indicado
+     * @param x
+     * @return 
+     */
     public NodoDoble anterior(NodoDoble x)
     {
         NodoDoble p;
@@ -109,6 +137,10 @@ public class ListaDoblementeLigada
         }
     }
     
+    /**
+     * Desconecta un nodo, indicando como parámetro el dato
+     * @param x 
+     */
     public void desconectar(NodoDoble x)
     {
         if (x.getLi() == null)
@@ -139,6 +171,10 @@ public class ListaDoblementeLigada
     {
     }*/
     
+    /**
+     * Inserta un nodo al final de la lista que como parámetro se igresa el dato
+     * @param y 
+     */
     public void insertarAlFinal(NodoDoble y)
     {
         if(primero == null)
@@ -152,6 +188,11 @@ public class ListaDoblementeLigada
         }
     }
     
+    /**
+     * Busca en la lista un dato d
+     * @param d
+     * @return 
+     */
     public NodoDoble buscarDato(Object d)
     {
         NodoDoble x;
@@ -163,6 +204,10 @@ public class ListaDoblementeLigada
         return x;
     }
     
+    /**
+     * Desconecta un nodo que como parámetro le ingresamos el dato
+     * @param x 
+     */
     public void borrar(NodoDoble x)
     {
         if(x == null)
@@ -173,6 +218,11 @@ public class ListaDoblementeLigada
         desconectar(x);
     }
     
+    /**
+     * Éste método se encarga de comparar el caracter si es menor o mayor a los datos que están ordenados alfabéticamente y busca dónde se debe insertar
+     * @param d
+     * @return 
+     */
     public NodoDoble buscarDondeInsertar(Object d)
     {
         
