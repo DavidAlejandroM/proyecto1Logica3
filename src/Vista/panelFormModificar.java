@@ -12,7 +12,7 @@ import modelo.Hilera;
 
 /**
  *
- * @author Alejandro
+ * @author Yaqueline Hoyos Montes, Alejandro Marín Alzate
  */
 public class panelFormModificar extends javax.swing.JPanel {
 
@@ -93,13 +93,20 @@ public class panelFormModificar extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    
+    /**
+     * Actualiza la vista de la hilera y borra la vista de modificar
+     * @param evt evento
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         cp.cleanPanel(cp.vp.panelHilera);
         cp.setPanel(cp.panelBotonesHilera(cp.hilera), cp.vp.panelHilera);
         cp.cleanPanel(this);
     }//GEN-LAST:event_jButton1ActionPerformed
-
+/**
+ * evento que valida la longiud de la hilera y las teclas que se oprimea para 
+ * que no se puedan entrar simbolos, y se actualiza la nueva hilera
+ * @param evt 
+ */
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
         jButton1.setEnabled(true);
         char c = evt.getKeyChar();

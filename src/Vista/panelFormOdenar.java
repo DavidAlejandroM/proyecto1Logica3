@@ -12,7 +12,7 @@ import modelo.Hilera;
 
 /**
  *
- * @author Alejandro
+ * @author Yaqueline Hoyos Montes, Alejandro Marín Alzate
  */
 public class panelFormOdenar extends javax.swing.JPanel {
 
@@ -85,7 +85,10 @@ public class panelFormOdenar extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    
+    /**
+     * evento que quita la vista de de ordenar
+     * @param evt 
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         cp.cleanPanel(this);

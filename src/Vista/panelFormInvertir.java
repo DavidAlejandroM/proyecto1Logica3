@@ -12,7 +12,7 @@ import modelo.Hilera;
 
 /**
  *
- * @author Alejandro
+ * @author Yaqueline Hoyos Montes, Alejandro Marín Alzate
  */
 public class panelFormInvertir extends javax.swing.JPanel {
 
@@ -55,12 +55,18 @@ public class panelFormInvertir extends javax.swing.JPanel {
         }
                
     }
-    
+    /**
+     * este metodo envia un texto al titulo de la vista
+     * @param s titulo
+     */
     public void setTextTitle(String s)
     {
         jLabel1.setText(s);
     }
-    
+    /**
+     * este metodo envia un texto al label de la respuesta de la vista
+     * @param s respuesta
+     */
     public void setTextResult(String s)
     {
         jLabel2.setText(s);
