@@ -111,6 +111,10 @@ public class panelFormInsertar extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * evento que valida que solo se pedan ingresar mayusculas y minusculas
+     * @param evt 
+     */
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
         jButton1.setEnabled(true);
         char c = evt.getKeyChar();
@@ -136,11 +140,15 @@ public class panelFormInsertar extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jTextField1KeyTyped
 
-    
+    /**
+     * redibuja el panel de bonotes hilera, limpia la vista de elminiar y 
+     * habilita los botones de funcionalidades
+     * @param evt 
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        cp.cleanPanel(cp.vp.getPanelHilera());
-        cp.setPanel(cp.panelBotonesHilera(hilera), cp.vp.getPanelHilera());
+        cp.cleanPanel(cp.vp.panelHilera);
+        cp.setPanel(cp.panelBotonesHilera(hilera), cp.vp.panelHilera);
         
         cp.cleanPanel(this);
         
@@ -156,7 +164,7 @@ public class panelFormInsertar extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-            cp.cleanPanel(this);        // TODO add your handling code here:
+                 // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

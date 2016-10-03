@@ -213,12 +213,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * evento cuando se oprime el boton de insertar
+     * @param evt evento
+     */
     private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
         JPanel panelFormInsertar = new panelFormInsertar(cp.hilera,cp);
         cp.cleanPanel(panelTrabajo);
         cp.setPanel(panelFormInsertar, this.panelTrabajo);
     }//GEN-LAST:event_btnInsertarActionPerformed
 
+    /**
+     * evento cuando se oprime el boton de eliminar
+     * @param evt evento
+     */
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         bntAnagrama.setEnabled(false);
         btnInsertar.setEnabled(false);
@@ -234,19 +242,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         cp.cleanPanel(panelTrabajo);
         cp.setPanel(panelFormEliminar, this.panelTrabajo);
     }//GEN-LAST:event_btnEliminarActionPerformed
-
+    /**
+     * evento cuando se oprime el boton de anagrama
+     * @param evt evento
+     */
     private void bntAnagramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntAnagramaActionPerformed
         JPanel panelFormAnagrama = new panelFormAnagrama(cp.hilera,cp);
         cp.cleanPanel(panelTrabajo);
         cp.setPanel(panelFormAnagrama, this.panelTrabajo);
     }//GEN-LAST:event_bntAnagramaActionPerformed
 
+    /**
+     * evento cuando se oprime el boton de validar palindromo
+     * @param evt evento
+     */
     private void btnPalindromoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPalindromoActionPerformed
         JPanel panelPalindromo = new panelFormPalindromo(cp.hilera, cp, 0);
         cp.cleanPanel(panelTrabajo);
         cp.setPanel(panelPalindromo, panelTrabajo);
     }//GEN-LAST:event_btnPalindromoActionPerformed
 
+    /**
+     * evento cuando se oprime el boton de Invertir
+     * @param evt evento
+     */
     private void btnInvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInvertirActionPerformed
         cp.hilera.invertir();
         cp.cleanPanel(panelHilera);
@@ -258,12 +277,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         cp.setPanel(panelFormInvertir, panelTrabajo);
     }//GEN-LAST:event_btnInvertirActionPerformed
 
+    /**
+     * evento cuando se oprime el boton de subString
+     * @param evt evento
+     */
     private void btnSubStringActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubStringActionPerformed
         JPanel panel = new panelFormSubString(cp.hilera, cp);
         cp.cleanPanel(panelTrabajo);
         cp.setPanel(panel, panelTrabajo);
     }//GEN-LAST:event_btnSubStringActionPerformed
-
+    
+    /**
+     * evento cuando se oprime el boton de Ordenar alfabeticamente
+     * @param evt evento
+     */
     private void btnOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarActionPerformed
         cp.hilera.ordenarAlfabeticamente();
         cp.cleanPanel(panelHilera);
@@ -273,21 +300,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         cp.cleanPanel(panelTrabajo);
         cp.setPanel(panel, panelTrabajo);
     }//GEN-LAST:event_btnOrdenarActionPerformed
-
+    
+    /**
+     * evento cuando se oprime el boton de modificar
+     * @param evt evento
+     */
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         JPanel panel = new panelFormModificar(cp.hilera, cp);
         cp.cleanPanel(panelTrabajo);
         cp.setPanel(panel, panelTrabajo);
     }//GEN-LAST:event_btnModificarActionPerformed
 
-    public JPanel getPanelHilera() {
-        return panelHilera;
-    }
-
-    public void setPanelHilera(JPanel panelHilera) {
-        this.panelHilera = panelHilera;
-    }
-    
+    /**
+     * Asigana un tamño dependiendo del tamaño de la pantalla del computador
+     * a los botones de funcionalidades de la vista principal
+     * @param dimension tamaño de la pantalla
+     */
     public void setSizeButtonsMenu(Dimension dimension)
     {
         this.panelBotones.setSize(300,(dimension.height- panelHilera.getSize().height));
