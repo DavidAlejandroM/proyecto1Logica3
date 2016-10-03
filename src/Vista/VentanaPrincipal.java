@@ -108,6 +108,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnModificar.setContentAreaFilled(false);
         btnModificar.setEnabled(false);
         btnModificar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/modificar2.png"))); // NOI18N
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
         panelBotones.add(btnModificar);
 
         btnInvertir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/invertir1.png"))); // NOI18N
@@ -254,6 +259,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPalindromoActionPerformed
 
     private void btnInvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInvertirActionPerformed
+        cp.hilera.invertir();
+        cp.cleanPanel(panelHilera);
+        cp.setPanel(cp.panelBotonesHilera(cp.hilera), panelHilera);
+        
+        
         JPanel panelFormInvertir = new panelFormInvertir(cp.hilera, cp, 1);
         cp.cleanPanel(panelTrabajo);
         cp.setPanel(panelFormInvertir, panelTrabajo);
@@ -266,8 +276,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSubStringActionPerformed
 
     private void btnOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarActionPerformed
-        // TODO add your handling code here:
+        cp.hilera.ordenarAlfabeticamente();
+        cp.cleanPanel(panelHilera);
+        cp.setPanel(cp.panelBotonesHilera(cp.hilera), panelHilera);
+        
+        JPanel panel = new panelFormOdenar(cp.hilera, cp);
+        cp.cleanPanel(panelTrabajo);
+        cp.setPanel(panel, panelTrabajo);
     }//GEN-LAST:event_btnOrdenarActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        JPanel panel = new panelFormModificar(cp.hilera, cp);
+        cp.cleanPanel(panelTrabajo);
+        cp.setPanel(panel, panelTrabajo);
+    }//GEN-LAST:event_btnModificarActionPerformed
 
     public JPanel getPanelHilera() {
         return panelHilera;

@@ -26,6 +26,11 @@ public class Hilera extends ListaDoblementeLigada
         
         return c;
     }
+    public void insertarCartacter(char c,int i)
+    {
+        NodoDoble n = this.getNodoI(i);
+        n.setDato(c);
+    }
     
     public void insertarCaracter(char c)
     {
