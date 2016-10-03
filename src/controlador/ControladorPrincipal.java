@@ -17,7 +17,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 /**
  *
- * @author Alejandro
+ * @author Yaqueline Hoyos Montes, Alejandro Marín Alzate
  */
 public class ControladorPrincipal {
     public Hilera hilera;
@@ -65,29 +65,19 @@ public class ControladorPrincipal {
         
     }
 
-    public boolean isControl() {
-        return control;
-    }
-
+/**
+ * metodo set de la variable de control que es true cuando se presiona el boton
+ * eliminar y false de lo contrario
+ * @param control variable de control
+ */
     public void setControl(boolean control) {
         this.control = control;
     }
-    
-    
-    public void setButtonsHilera(JButton[] buttons)
-    {
-        this.btnsHilera = buttons;
-    }
-    
-    
-    
+
     public static void main(String args[]) {
        
        ControladorPrincipal cp = new ControladorPrincipal();
-  
-       
-        
-        
+     
     }
     
     /**
@@ -176,14 +166,20 @@ public class ControladorPrincipal {
             return  null;
         }
     }
-    
+    /**
+     * asigna a las letras de la hilera el evento para que se puedan borrar
+     * al hacerles click
+     */
     public void eventosBotonesHilera()
     {
         for (int i = 0; i < btnsHilera.length; i++) {
             btnsHilera[i].addActionListener(actionListener);
         }
     }
-    
+    /**
+     * quita a las letras de la hilera el evento para que se puedan borrar
+     * al hacerles click
+     */
     public void quitarEventoBotones()
     {
         for (int i = 0; i < btnsHilera.length; i++) {

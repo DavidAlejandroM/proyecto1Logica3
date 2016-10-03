@@ -13,7 +13,7 @@ import modelo.Hilera;
 
 /**
  *
- * @author Alejandro
+ * @author Yaqueline Hoyos Montes, Alejandro Marín Alzate
  */
 public class panelFormSubString extends javax.swing.JPanel {
 
@@ -103,7 +103,10 @@ public class panelFormSubString extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    
+    /**
+     * Evento que valida cual de las hileras es substring de cual
+     * @param evt 
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if(hilera.esSubstring(hileraSub))
         {
@@ -126,6 +129,10 @@ public class panelFormSubString extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    /**
+     * evento que valida que solo se pedan ingresar mayusculas y minusculas
+     * @param evt 
+     */
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
         jButton1.setEnabled(true);
         char c = evt.getKeyChar();

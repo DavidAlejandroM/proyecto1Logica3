@@ -14,7 +14,7 @@ import modelo.Hilera;
 
 /**
  *
- * @author Alejandro
+ * @author Yaqueline Hoyos Montes, Alejandro Marín Alzate
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
