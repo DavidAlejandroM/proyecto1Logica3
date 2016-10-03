@@ -83,7 +83,10 @@ public class panelFormEliminar extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    
+    /**
+     * Evento que le quita los eventos a los botones de la hilera y lo vueve a dibujar
+     * @param evt evento
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         cp.vp.bntAnagrama.setEnabled(true);
         cp.vp.btnInsertar.setEnabled(true);
